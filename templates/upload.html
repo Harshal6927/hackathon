@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Singularity{% endblock %}
+
+{% block body %}
+<div class="content">
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <center>
+        <div style="font-size: 28px;" class="cipher"><span style="font-weight: bold;">Selected file:</span> {{ file_name
+            }}</div>
+        <div>
+            <video width="848" height="480" controls>
+                <source src="static/uploads/{{ file_name }}">
+            </video>
+        </div>
+
+        <a href="{{ url_for('index') }}">
+            <button class="btn btn-dark jett">&nbsp;Change Video&nbsp;</button>
+        </a>
+
+        <a href="{{ url_for('cv') }}" target="_blank">
+            <button class="btn btn-dark jett">Start Detection&nbsp;</button>
+        </a>
+        <br>
+        <a href="{{ url_for('download') }}">
+            <button class="btn btn-dark jett">&nbsp;Download CSV</button>
+        </a>
+
+        <a href="{{ url_for('csv') }}" target="_blank">
+            <button class="btn btn-dark jett">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View CSV&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        </a>
+    </center>
+</div>
+{% endblock %}
